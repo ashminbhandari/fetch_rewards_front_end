@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import SearchBar from "./components/SearchBar";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
     const [coreData, setCoreData] = useState([]);
@@ -14,8 +14,9 @@ function App() {
                 setCoreData(data);
             });
     });
+
     return (
-        <div className="App">
+        <div className="App left-margin-slight">
             <SearchBar/>
             {
                 coreData.map((row) => <p>{row.listId}</p>)
