@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import SearchBar from "./components/SearchBar/SearchBar";
+import TableSheet from "./components/TableSheet/TableSheet";
 
 function App() {
     const [coreData, setCoreData] = useState([]);
@@ -16,11 +17,9 @@ function App() {
     });
 
     return (
-        <div className="App left-margin-slight">
+        <div className="App">
             <SearchBar/>
-            {
-                coreData.map((row) => <p>{row.listId}</p>)
-            }
+            <TableSheet data={coreData}/>
         </div>
     );
 }

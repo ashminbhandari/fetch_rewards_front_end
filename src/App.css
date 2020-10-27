@@ -8,24 +8,51 @@
   box-shadow: none;
 }
 
-.text-align-center {
+.center-text-align {
   text-align: center;
 }
 
+.left-text-align {
+  text-align: left;
+}
+
+.vertical-align-bottom {
+  vertical-align: bottom;
+}
+
+.large-font {
+  font-size: 1.5rem;
+}
 .larger-font {
   font-size: 2.5rem;
 }
 
-.left-margin-slight {
+.slight-left-margin {
   margin-left: 0.5rem;
 }
 
-.left-margin-medium {
-  margin-left: 2rem;
+.large-top-margin {
+  margin-top: 1rem;
+}
+
+.large-padding {
+  padding-top: 1rem;
 }
 
 .full-width {
-  width: 90vw;
+  width: 100vw;
+}
+
+.lighter-text-stroke {
+  -webkit-text-stroke: 4px white;
+}
+
+.thin-border-bottom {
+  border-bottom: 1px solid black;
+}
+
+.border-collapse {
+  border-collapse: collapse;
 }
 
 
