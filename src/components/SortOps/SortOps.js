@@ -5,7 +5,7 @@ const SortOps = ({className, sortFunction}) => {
     const {sortDisplayData} = useContext(CoreDataContext);
 
     return (
-        <i onClick={() => sortDisplayData(sortFunction)} className={`${className}`}/>
+        <i onClick={() => sortDisplayData(sortFunction)} className={`${className} hand-pointer`}/>
     )
 }
 
