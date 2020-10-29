@@ -31,6 +31,9 @@
   margin-left: 0.5rem;
 }
 
+.large-left-margin {
+  margin-left: 2rem;
+}
 .large-top-margin {
   margin-top: 1rem;
 }
@@ -44,7 +47,7 @@
 }
 
 .lighter-text-stroke {
-  -webkit-text-stroke: 4px white;
+  -webkit-text-stroke: 2.5px white;
 }
 
 .thin-border-bottom {
