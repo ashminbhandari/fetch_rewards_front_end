@@ -4,6 +4,6 @@
 Live: https://vibrant-swartz-f26b67.netlify.app/
 
 # Usage
-To run this project locally, please clone or fork the repo, and use ```npm install``` before you run ```npm start```.
+To run this project locally, please clone or fork the repo and use ```npm install``` before you run ```npm start```.
 
 
