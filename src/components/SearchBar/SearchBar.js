@@ -1,9 +1,20 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
+import CoreDataContext from "../../contexts/CoreDataContext";
 
-function SearchBar() {
+const SearchBar = ({className, placeHolder}) => {
+    const {filterDisplayData} = useContext(CoreDataContext);
+
+    const search = (keyword) => {
+        filterDisplayData(row => row.name != null && row.name.includes(keyword));
+    }
+
     return (
         <div>
-            <input className="text-input larger-font full-width" type={"text"} placeholder={"Type something to search"}/>
+            <input className={className}
+                   type={"text"}
+                   placeholder={placeHolder}
+                   onChange={event => search(event.target.value)}
+            />
         </div>
     );
 }

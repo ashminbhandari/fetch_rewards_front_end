@@ -1,9 +1,6 @@
 import React, { createContext } from 'react';
 
-const CoreDataContext = createContext({
-    data: null,
-    sortCoreData: () => {}
-});
+const CoreDataContext = createContext({});
 
 export default CoreDataContext;
 

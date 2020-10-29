@@ -1,30 +1,30 @@
 import React, {useContext} from 'react';
 import CoreDataContext from "../../contexts/CoreDataContext";
 
-import SortIcon from "../SortIcon/SortIcon";
+import SortOps from "../SortOps/SortOps";
 
 const TableSheet = () => {
-    const {coreData} = useContext(CoreDataContext);
+    const {displayData} = useContext(CoreDataContext);
 
-    const tableHead = (tableHeadTitle, iconA, iconB) =>
+    const tableHead = (tableHeadTitle, sortIconUp, sortIconDown) =>
         <th className={"large-padding thin-border-bottom left-text-align"}>
             {tableHeadTitle}
-            <SortIcon className={`${iconA} large-left-margin lighter-text-stroke`}
-                      sortFunction={(a, b) => a.id - b.id}/>
-            <SortIcon className={`${iconB} large-left-margin lighter-text-stroke`}
-                      sortFunction={(a, b) => b.id - a.id}/>
+            <SortOps className={`${sortIconUp} large-left-margin lighter-text-stroke`}
+                     sortFunction={(a, b) => a[tableHeadTitle] > b[tableHeadTitle] ? 1 : b[tableHeadTitle] > a[tableHeadTitle] ? -1 : 0}/>
+            <SortOps className={`${sortIconDown} large-left-margin lighter-text-stroke`}
+                     sortFunction={(b, a) => a[tableHeadTitle] > b[tableHeadTitle] ? 1 : b[tableHeadTitle] > a[tableHeadTitle] ? -1 : 0}/>
         </th>
 
     return (
         <div>
             <table className={"border-collapse full-width large-font large-top-margin"}>
                 <tr>
-                    {tableHead('ID', 'fas fa-arrow-up', 'fas fa-arrow-down')}
-                    {tableHead('List ID', 'fas fa-arrow-up', 'fas fa-arrow-down')}
-                    {tableHead('Name', 'fas fa-arrow-up', 'fas fa-arrow-down')}
+                    {tableHead('id', 'fas fa-arrow-up', 'fas fa-arrow-down')}
+                    {tableHead('listId', 'fas fa-arrow-up', 'fas fa-arrow-down')}
+                    {tableHead('name', 'fas fa-arrow-up', 'fas fa-arrow-down')}
                 </tr>
                 {
-                    coreData.map((row) =>
+                    displayData.map((row) =>
                         <tr key={row.id} className={"thin-border-bottom large-font"}>
                             <td className={"large-padding thin-border-bottom"}>
                                 {row.id}
